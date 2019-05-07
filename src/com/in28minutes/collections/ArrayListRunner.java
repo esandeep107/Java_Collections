@@ -35,6 +35,7 @@ public class ArrayListRunner {
 
 		Collections.sort(numbersAl);
 		System.out.println(numbersAl);
+
 	}
 
 }

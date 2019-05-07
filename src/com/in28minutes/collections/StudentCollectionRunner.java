@@ -1,11 +1,17 @@
 /**
  * @author : Sayaka Tamura
  * May 7, 2019
- * Udemy Java Collections 1
- * https://www.youtube.com/watch?v=RhAV9NfobPM&list=WL&index=7&t=0s
+ * Udemy Java Collections 2
+ * https://www.youtube.com/watch?v=-54t79mEdNk&list=WL&index=6
  */
 package com.in28minutes.collections;
 
-public class StudentCollectionRunner {
+import java.util.List;
 
+public class StudentCollectionRunner {
+	public static void main(String[] args) {
+		List<Student> students = List.of(new Student(1, "Ranga"), new Student(100, "Adam"), new Student(2, "Eve"));
+
+		System.out.println(students);
+	}
 }

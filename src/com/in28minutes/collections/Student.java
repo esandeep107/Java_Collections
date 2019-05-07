@@ -6,7 +6,7 @@
  */
 package com.in28minutes.collections;
 
-public class Student {
+public class Student implements Comparable<Student> {
 	private int id;
 	private String name;
 
@@ -35,6 +35,11 @@ public class Student {
 	@Override
 	public String toString() {
 		return "Student [id=" + id + ", name=" + name + "]";
+	}
+
+	@Override
+	public int compareTo(Student that) {
+		return Integer.compare(this.id, that.id);
 	}
 
 }

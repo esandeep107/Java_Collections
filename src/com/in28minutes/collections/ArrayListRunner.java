@@ -6,10 +6,13 @@
  */
 package com.in28minutes.collections;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-public class ArrayListIterator {
+public class ArrayListRunner {
 
 	/**
 	 * @param wordsAl : list of words
@@ -22,6 +25,16 @@ public class ArrayListIterator {
 		}
 
 		return wordsAl;
+	}
+
+	public static void main(String[] args) {
+		List<Integer> numbersAl = new ArrayList<Integer>(Arrays.asList(123, 12, 3, 45, 105));
+		System.out.println(numbersAl.indexOf(3));
+		System.out.println(numbersAl.remove(Integer.valueOf(3)));
+		System.out.println(numbersAl);
+
+		Collections.sort(numbersAl);
+		System.out.println(numbersAl);
 	}
 
 }

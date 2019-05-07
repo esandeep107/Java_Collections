@@ -18,7 +18,7 @@ class StudentTest {
 	Student stu = new Student(2, "Eve");
 
 	@Nested
-	@DisplayName("For compareTo method")
+	@DisplayName("For compareTo method at Student Class")
 	class compareToTest {
 
 		@BeforeEach
@@ -29,14 +29,33 @@ class StudentTest {
 		@Test
 		@DisplayName("comparing larger ID number")
 		void compareToLargeNumID() {
-			assertTrue(stu.compareTo(new Student(100, "Adam")) < 1);
+			assertTrue(stu.compareTo(new Student(100, "Adam")) > -1);
 		}
 
 		@Test
 		@DisplayName("comparing smaller ID number")
 		void compareToSmallNumID() {
-			assertTrue(stu.compareTo(new Student(1, "Ranga")) > -1);
+			assertTrue(stu.compareTo(new Student(1, "Ranga")) < 1);
 		}
+	}
+
+	@Nested
+	@DisplayName("For compare method at DiscendingStudentIDComparator")
+	class TestCompareWithDiscendingStudentIDComparator {
+		DiscendingStudentIDComparator disStuID = new DiscendingStudentIDComparator();
+
+		@Test
+		@DisplayName("comparing larger ID number")
+		void compareWithLargeNumID() {
+			assertTrue(disStuID.compare(stu, new Student(200, "Rabi")) < 1);
+		}
+
+		@Test
+		@DisplayName("comparing smaller ID number")
+		void compareWithSmallNumID() {
+			assertTrue(disStuID.compare(stu, new Student(1, "Ranga")) > -1);
+		}
+
 	}
 
 }

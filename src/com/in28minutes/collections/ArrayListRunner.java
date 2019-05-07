@@ -9,7 +9,6 @@ package com.in28minutes.collections;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 
 public class ArrayListRunner {
@@ -18,12 +17,13 @@ public class ArrayListRunner {
 	 * @param wordsAl : list of words
 	 */
 	public List<String> removeEndWith_at(List<String> wordsAl) {
-		Iterator<String> iterator = wordsAl.iterator();
-		while (iterator.hasNext()) {
-			if (iterator.next().endsWith("at"))
-				iterator.remove();
-		}
+//		Iterator<String> iterator = wordsAl.iterator();
+//		while (iterator.hasNext()) {
+//			if (iterator.next().endsWith("at"))
+//				iterator.remove();
+//		}
 
+		wordsAl.removeIf(s -> s.endsWith("at"));
 		return wordsAl;
 	}
 

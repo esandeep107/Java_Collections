@@ -8,7 +8,9 @@ package com.in28minutes.collections;
 
 import static org.junit.Assert.assertArrayEquals;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -16,7 +18,7 @@ import org.junit.jupiter.api.Test;
 class ArrayListRunnerTest {
 
 	ArrayListRunner alIterator = new ArrayListRunner();
-	List<String> actualWords = Arrays.asList("Apple", "Bat", "Orange", "Cat");
+	Collection actualWords = new ArrayList(Arrays.asList("Apple", "Bat", "Orange", "Cat"));
 
 //	@BeforeAll
 //	static void beforeAll() {
@@ -36,7 +38,7 @@ class ArrayListRunnerTest {
 	@Test
 	void testremoveEndWith_at() {
 		// can make these list as below in-line
-		actualWords = alIterator.removeEndWith_at(actualWords);
+		actualWords = alIterator.removeEndWith_at((List<String>) actualWords);
 		List<String> expectedvalue = Arrays.asList("Apple", "Orange");
 		assertArrayEquals(expectedvalue.toArray(), actualWords.toArray());
 	}

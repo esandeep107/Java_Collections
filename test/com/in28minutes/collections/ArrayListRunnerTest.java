@@ -13,27 +13,31 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInfo;
 
 class ArrayListRunnerTest {
 
 	ArrayListRunner alIterator = new ArrayListRunner();
 	Collection actualWords = new ArrayList(Arrays.asList("Apple", "Bat", "Orange", "Cat"));
 
-//	@BeforeAll
-//	static void beforeAll() {
-//		System.out.println("Initializing the test...");
-//	}
-//
-//	@AfterAll
-//	static void afterall() {
-//		System.out.println("Closing the test...");
-//	}
-//
-//	@BeforeEach
-//	void beforeEach(TestInfo info) {
-//		System.out.println("Initialize Test Data for " + info.getDisplayName());
-//	}
+	@BeforeAll
+	static void beforeAll() {
+		System.out.println("Initializing the test...");
+	}
+
+	@AfterAll
+	static void afterall() {
+		System.out.println("Closing the test...");
+	}
+
+	@BeforeEach
+	void beforeEach(TestInfo info) {
+		System.out.println("Initialize Test Data for " + info.getDisplayName());
+	}
 
 	@Test
 	void testremoveEndWith_at() {

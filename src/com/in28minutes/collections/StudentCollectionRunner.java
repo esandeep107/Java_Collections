@@ -8,7 +8,17 @@ package com.in28minutes.collections;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+
+class DiscendingStudentComparator implements Comparator<Student> {
+
+	@Override
+	public int compare(Student stu1, Student stu2) {
+		return Integer.compare(stu1.getId(), stu2.getId());
+	}
+
+}
 
 public class StudentCollectionRunner {
 	public static void main(String[] args) {
@@ -17,7 +27,9 @@ public class StudentCollectionRunner {
 
 		List<Student> studentsAl = new ArrayList<>(students);
 		Collections.sort(studentsAl);
-		System.out.println(studentsAl);
+		System.out.println("Asc" + studentsAl);
 
+		Collections.sort(studentsAl, new DiscendingStudentComparator());
+		System.out.println("DiscendingStudentComparator" + studentsAl);
 	}
 }

@@ -6,6 +6,7 @@
  */
 package com.in28minutes.collections;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
@@ -20,9 +21,16 @@ class DemoTest {
 	}
 
 	@Test
-	public void testConcatString() {
+	void testConcatString() {
 		Demo demo = new Demo();
 		assertEquals("Hello World", demo.concatString("Hello ", "World"));
+	}
+
+	@Test
+	void testAddOneToArray() {
+		Demo demo = new Demo();
+		int expected[] = new int[] { 3, 8 };
+		assertArrayEquals(expected, demo.addOneToArray(new int[] { 2, 7 }));
 	}
 
 }

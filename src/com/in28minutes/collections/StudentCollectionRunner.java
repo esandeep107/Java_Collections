@@ -11,11 +11,20 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-class DiscendingStudentComparator implements Comparator<Student> {
+class DiscendingStudentIDComparator implements Comparator<Student> {
 
 	@Override
 	public int compare(Student stu1, Student stu2) {
 		return Integer.compare(stu1.getId(), stu2.getId());
+	}
+
+}
+
+class DiscendingStudentNameComparator implements Comparator<Student> {
+
+	@Override
+	public int compare(Student stu1, Student stu2) {
+		return stu1.getName().compareTo(stu2.getName());
 	}
 
 }
@@ -29,7 +38,10 @@ public class StudentCollectionRunner {
 		Collections.sort(studentsAl);
 		System.out.println("Asc" + studentsAl);
 
-		Collections.sort(studentsAl, new DiscendingStudentComparator());
-		System.out.println("DiscendingStudentComparator" + studentsAl);
+		Collections.sort(studentsAl, new DiscendingStudentIDComparator());
+		System.out.println("DiscendingStudentIDComparator" + studentsAl);
+
+		Collections.sort(studentsAl, new DiscendingStudentNameComparator());
+		System.out.println("DiscendingStudentNameComparator" + studentsAl);
 	}
 }

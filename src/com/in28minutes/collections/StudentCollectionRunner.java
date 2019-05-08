@@ -4,6 +4,15 @@
  * Udemy Java Collections 2
  * https://www.youtube.com/watch?v=-54t79mEdNk&list=WL&index=6
  */
+
+/**
+ * List: 
+ * <Basic> List maintains the sequence of the elements stored in a list.
+ * <Duplication> List may have duplicate elements in it.
+ * <Methods> In addition to methods defined in Collection, List defines some of its own methods.
+ * <Implementation> List is implemented by ArrayList, LinkedList, CopyOnWriteArrayList, Vector, Stack.
+ */
+
 package com.in28minutes.collections;
 
 import java.util.ArrayList;

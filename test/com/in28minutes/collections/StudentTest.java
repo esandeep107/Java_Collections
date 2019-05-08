@@ -15,7 +15,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInfo;
 
 class StudentTest {
-	Student stu = new Student(2, "Eve");
+	Student stu2 = new Student(2, "Eve");
+	Student stu100 = new Student(100, "Adam");
+	Student stu1 = new Student(1, "Ranga");
 
 	@Nested
 	@DisplayName("For compareTo method at Student Class")
@@ -29,31 +31,31 @@ class StudentTest {
 		@Test
 		@DisplayName("comparing larger ID number")
 		void compareToLargeNumID() {
-			assertTrue(stu.compareTo(new Student(100, "Adam")) > -1);
+			assertTrue(stu2.compareTo(stu100) > -1);
 		}
 
 		@Test
 		@DisplayName("comparing smaller ID number")
 		void compareToSmallNumID() {
-			assertTrue(stu.compareTo(new Student(1, "Ranga")) < 1);
+			assertTrue(stu2.compareTo(stu1) < 1);
 		}
 	}
 
 	@Nested
 	@DisplayName("For compare method at DiscendingStudentIDComparator")
 	class TestCompareWithDiscendingStudentIDComparator {
-		DiscendingStudentIDComparator disStuID = new DiscendingStudentIDComparator();
+		AscendingStudentIDComparator disStuID = new AscendingStudentIDComparator();
 
 		@Test
 		@DisplayName("comparing larger ID number")
 		void compareWithLargeNumID() {
-			assertTrue(disStuID.compare(stu, new Student(200, "Rabi")) < 1);
+			assertTrue(disStuID.compare(stu2, stu100) < 1);
 		}
 
 		@Test
 		@DisplayName("comparing smaller ID number")
 		void compareWithSmallNumID() {
-			assertTrue(disStuID.compare(stu, new Student(1, "Ranga")) > -1);
+			assertTrue(disStuID.compare(stu2, stu1) > -1);
 		}
 
 	}

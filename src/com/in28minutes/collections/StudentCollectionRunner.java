@@ -11,7 +11,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-class DiscendingStudentIDComparator implements Comparator<Student> {
+class AscendingStudentIDComparator implements Comparator<Student> {
 
 	@Override
 	public int compare(Student stu1, Student stu2) {
@@ -36,12 +36,16 @@ public class StudentCollectionRunner {
 
 		List<Student> studentsAl = new ArrayList<>(students);
 		Collections.sort(studentsAl);
-		System.out.println("Asc" + studentsAl);
+		System.out.println("Desc" + studentsAl);
 
-		Collections.sort(studentsAl, new DiscendingStudentIDComparator());
-		System.out.println("DiscendingStudentIDComparator" + studentsAl);
+		// Option 1: to sort List
+		// Collections.sort(studentsAl, new AscendingStudentIDComparator());
+		// Option 2 : to sort List
+		studentsAl.sort(new AscendingStudentIDComparator());
+		System.out.println("AscendingStudentIDComparator" + studentsAl);
 
 		Collections.sort(studentsAl, new DiscendingStudentNameComparator());
 		System.out.println("DiscendingStudentNameComparator" + studentsAl);
+
 	}
 }

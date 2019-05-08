@@ -4,6 +4,13 @@
  * Udemy Java Collections 3
  * https://www.youtube.com/watch?v=114BHPiaPGc&list=WL&index=7
  */
+
+/**
+ * Queue: 
+ * ordered list the same as "List" 
+ * All elements get inserted at the "end" 
+ * and removed from the "beginning" (or head) of the queue.
+ */
 package com.in28minutes.collections;
 
 import java.util.Comparator;

@@ -6,7 +6,7 @@
  */
 
 /**
- * List: 
+ * Set: 
  * <Basic> Set does not particularly maintain insertion order but, Linked HashSet maintains the insertion order.
  * <Duplication> The add() method returns false if you try to insert the duplicate elements.
  * <Methods> Set does not define any additional method.

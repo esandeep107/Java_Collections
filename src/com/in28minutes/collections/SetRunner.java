@@ -63,6 +63,19 @@ public class SetRunner {
 		Set<Character> unique_characters = new TreeSet<>(characters);
 		System.out.println(unique_characters);
 
+		// Exercise for TreeSet
+		Set<Integer> numbers = new TreeSet<>(Set.of(65, 54, 34, 12, 99));
+
+		System.out.println(((TreeSet<Integer>) numbers).floor(40)); // 34
+		System.out.println(((TreeSet<Integer>) numbers).lower(34)); // 12
+		System.out.println(((TreeSet<Integer>) numbers).ceiling(36)); // 54
+		System.out.println(((TreeSet<Integer>) numbers).higher(34)); // 54
+		System.out.println(((TreeSet<Integer>) numbers).subSet(20, 80)); // [34,54,65]
+		System.out.println(((TreeSet<Integer>) numbers).subSet(34, 54));// [34] 2nd param excludes
+		System.out.println(((TreeSet<Integer>) numbers).subSet(34, true, 65, true));// [34,54,65] 2nd param includes
+		System.out.println(((TreeSet<Integer>) numbers).headSet(50));// [12,34]
+		System.out.println(((TreeSet<Integer>) numbers).tailSet(50));// [54,65,99]
+
 	}
 
 }

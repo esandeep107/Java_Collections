@@ -72,11 +72,59 @@ public class MapRunner {
 		treeMap.put("A", 15);
 		treeMap.put("Z", 5);
 		treeMap.put("L", 250);
-		System.out.println(treeMap); // sorted {A=15, F=25, L=250, Z=5}
+		treeMap.put("B", 25);
+		treeMap.put("G", 25);
+		System.out.println(treeMap); // sorted {A=15, B=25, F=25, G=25, L=250, Z=5}
+		System.out.println(treeMap.higherKey("B")); // F
+		System.out.println(treeMap.ceilingKey("B")); // B : includes the value
+		System.out.println(treeMap.lowerKey("B")); // A
+		System.out.println(treeMap.floorKey("B")); // B : includes the value
+		System.out.println(treeMap.firstEntry()); // A=15
+		System.out.println(treeMap.lastEntry()); // Z=5
+		System.out.println(treeMap.subMap("C", "Y")); // {F=25, G=25, L=250}
+		System.out.println(treeMap.subMap("B", "Z")); // {B=25, F=25, G=25, L=250}
+		System.out.println(treeMap.subMap("B", true, "Z", true)); // {B=25, F=25, G=25, L=250, Z=5}
 
 		// Exercise: how many character & word we can find from the sentence as below
-		String str = "This is a great thing";
+		String str = "This is an awsome occasion. " + "This has never happened before.";
 
+		// For counting characters
+		Map<Character, Integer> occurances = new HashMap<>();
+
+		char[] characters = str.toCharArray();
+
+		for (char character : characters) {
+			// Get the character
+			Integer integer = occurances.get(character);
+
+			// if it is there, we increment the count
+			// if it is not there, initialize to 1
+			if (integer == null) {
+				occurances.put(character, 1);
+			} else {
+				occurances.put(character, integer + 1);
+			}
+		}
+		System.out.println(occurances);
+
+		// For counting words
+		Map<String, Integer> stringOccurances = new HashMap<>();
+		str = str.replace(".", "");
+		String[] words = str.split(" ");
+
+		for (String word : words) {
+			// Get the word
+			Integer integer = occurances.get(word);
+
+			// if it is there, we increment the count
+			// if it is not there, initialize to 1
+			if (integer == null) {
+				stringOccurances.put(word, 1);
+			} else {
+				stringOccurances.put(word, integer + 1);
+			}
+		}
+		System.out.println(stringOccurances);
 	}
 
 }

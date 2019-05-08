@@ -5,22 +5,6 @@ import java.util.Arrays;
 
 import junit.framework.TestCase;
 
-//So we can see the list objects being created,
-//and keep track of when they are cleaned up:
-class CountedList extends ArrayList {
-	private static int counter = 0;
-
-	private int id = counter++;
-
-	public CountedList() {
-		System.out.println("CountedList #" + id);
-	}
-
-	public int getId() {
-		return id;
-	}
-}
-
 public class ArrayListJUnitDemo extends TestCase {
 	private CountedList list = new CountedList();
 
